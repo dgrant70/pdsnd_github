@@ -41,9 +41,17 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 
+<<<<<<< HEAD
     """ get user input for city """
     city = user_input('Enter one of the following cities by typing in the name.(chicago, new york city, washington): ',
                      list(CITY_DATA.keys()))
+||||||| 7da8319
+    # get user input for month (all, january, february, ... , june)
+=======
+    """ get user input for city """
+    city = user_input('Enter one of the following cities: chicago, new york city, washington ',
+                     list(CITY_DATA.keys()))
+>>>>>>> refactoring
 
     """ get user input for month """
     month = user_input('Enter the month you would like data: january, february, march, april, may, june or all: ',
@@ -140,7 +148,7 @@ def trip_duration_stats(df):
     return_msg('Total Travel Time: ', df['total_travel'].sum())
 
     """ display mean travel time """
-    return_msg('Mean Travel Time: ', df['total_travel'].mean())
+    return_msg('Average Travel Time: ', df['total_travel'].mean())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -192,6 +200,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
+<<<<<<< HEAD
 #        raw_data = user_input('\nWould you like to see table raw data? Enter yes or no.\n', ['yes', 'no'])
 #        if raw_data == 'yes':
 #            print(df.head())
@@ -212,6 +221,28 @@ def main():
 
         restart = user_input('\nWould you like to restart the program? Enter yes or no.\n', ['yes', 'no'])
         if restart.lower() == 'no':
+||||||| 7da8319
+        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        if restart.lower() != 'yes':
+=======
+# https://knowledge.udacity.com/questions/58280 
+
+        lower_bound = 0
+        upper_bound = 5
+        while True:
+          raw_data = input('Would you like to see 5 rows of data data?\nPlease select yes or no.').lower()
+          if (raw_data == 'yes'):
+            print(df[df.columns[0:]].iloc[lower_bound:upper_bound])
+            lower_bound +=5
+            upper_bound +=5
+            #return
+            continue
+          elif (raw_data == 'no'):
+            break
+
+        restart = user_input('\nWould you like to restart the program? Enter yes or no.\n', ['yes', 'no'])
+        if restart.lower() == 'no':
+>>>>>>> refactoring
             break
 
 
