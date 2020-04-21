@@ -192,11 +192,8 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-#        raw_data = user_input('\nWould you like to see table raw data? Enter yes or no.\n', ['yes', 'no'])
-#        if raw_data == 'yes':
-#            print(df.head())
-
 # https://knowledge.udacity.com/questions/58280 
+
         lower_bound = 0
         upper_bound = 5
         while True:
